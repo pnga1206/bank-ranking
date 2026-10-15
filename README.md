@@ -1,29 +1,29 @@
-# Bank DX Ranking: d? li?u v? pipeline nghi?n c?u
+﻿# Bank DX Ranking: dữ liệu và pipeline nghiên cứu
 
-Repo l?u d? li?u nghi?n c?u chuy?n ??i s? c?a 5 ng?n h?ng Vi?t Nam (VCB, VietinBank/CTG, SHB, Sacombank/STB v? Nam A Bank/NAB), giai ?o?n 2023?2025. ??y l? BXH nghi?n c?u c?a nh?m tham kh?o DBI, kh?ng ph?i BXH ch?nh th?c do Ng?n h?ng Nh? n??c c?ng b?.
+Repo lưu dữ liệu nghiên cứu chuyển đổi số của 5 ngân hàng Việt Nam (VCB, VietinBank/CTG, SHB, Sacombank/STB và Nam A Bank/NAB), giai đoạn 2023–2025. Đây là BXH nghiên cứu của nhóm tham khảo DBI, không phải BXH chính thức do Ngân hàng Nhà nước công bố.
 
-## C?u tr?c repo
+## Cấu trúc repo
 
-- `data/evidence.csv`: c?c quan s?t ?ang d?ng ?? ch?m ?i?m, g?m ng?n h?ng, n?m, ti?u ch?, gi? tr? v? ngu?n hi?n c?.
-- `data/scores.json`: ?i?m nghi?n c?u t?ng h?p t? `evidence.csv` theo tr?ng s? hi?n t?i.
-- `data/evidence_source_matrix.csv`: ngu?n g?c v? tr?ch ?o?n BCTN ?? ??i chi?u. C?t `match_status` ph?n bi?t ngu?n kh?p s? li?u v?i tr?ch ?o?n ch? li?n quan ch? ??.
-- `data/evidence_audit_summary.csv`: tr?ng th?i r? so?t theo ng?n h?ng/n?m/ti?u ch?; cho bi?t ti?u ch? c?n thi?u ngu?n ??i chi?u.
-- `data/news_2026.csv`: c?c tin t?c li?n quan ?? thu th?p.
-- `data/annual_reports/`: 15 file PDF BCTN (5 ng?n h?ng ? 3 n?m), t?ng dung l??ng kho?ng 195 MB.
-- `data/annual_reports_manifest.csv`: ngu?n, t?n file, tr?ng th?i t?i v? m? SHA-256 c?a t?ng b?o c?o.
-- `data/annual_report_keyword_counts.csv`: s? l?n xu?t hi?n t? kh?a trong t?ng b?o c?o.
-- `data/annual_report_snippets.csv`: tr?ch ?o?n ng?n k?m s? trang ?? h? tr? r? so?t th? c?ng; tr?ch ?o?n kh?ng t? x?c nh?n t?nh ??ng ??n c?a ?i?m.
-- `data/report_catalog.csv`: m?u CSV t?y ch?n ?? cung c?p URL PDF tr?c ti?p khi ch?y c?ng c? t?i v?i catalog ri?ng.
-- `src/mine_annual_reports.py`: l?y m?c l?c Zenodo, t?i c?c PDF kh?p ng?n h?ng/n?m v? t?o manifest c?ng th?ng k? t? kh?a. C?ng c? t?i c?c b?o c?o m?c ti?u, kh?ng t?i to?n b? ZIP.
-- `src/extract_report_snippets.py`: tr?ch ng? c?nh theo trang t? c?c PDF ?? t?i.
-- `src/scoring.py`, `src/method.py`: m? t?nh ?i?m v? m? t? ph??ng ph?p nghi?n c?u; repo kh?ng ch?a dashboard.
-- `requirements.txt`: th? vi?n Python c?n c?i.
+- `data/evidence.csv`: các quan sát đang dùng để chấm điểm, gồm ngân hàng, năm, tiêu chí, giá trị và nguồn hiện có.
+- `data/scores.json`: điểm nghiên cứu tổng hợp từ `evidence.csv` theo trọng số hiện tại.
+- `data/evidence_source_matrix.csv`: nguồn gốc và trích đoạn BCTN để đối chiếu. Cột `match_status` phân biệt nguồn khớp số liệu với trích đoạn chỉ liên quan chủ đề.
+- `data/evidence_audit_summary.csv`: trạng thái rà soát theo ngân hàng/năm/tiêu chí; cho biết tiêu chí còn thiếu nguồn đối chiếu.
+- `data/news_2026.csv`: các tin tức liên quan đã thu thập.
+- `data/annual_reports/`: 15 file PDF BCTN (5 ngân hàng × 3 năm), tổng dung lượng khoảng 195 MB.
+- `data/annual_reports_manifest.csv`: nguồn, tên file, trạng thái tải và mã SHA-256 của từng báo cáo.
+- `data/annual_report_keyword_counts.csv`: số lần xuất hiện từ khóa trong từng báo cáo.
+- `data/annual_report_snippets.csv`: trích đoạn ngắn kèm số trang để hỗ trợ rà soát thủ công; trích đoạn không tự xác nhận tính đúng đắn của điểm.
+- `data/report_catalog.csv`: mẫu CSV tùy chọn để cung cấp URL PDF trực tiếp khi chạy công cụ tải với catalog riêng.
+- `src/mine_annual_reports.py`: lấy mục lục Zenodo, tải các PDF khớp ngân hàng/năm và tạo manifest cùng thống kê từ khóa. Công cụ tải các báo cáo mục tiêu, không tải toàn bộ ZIP.
+- `src/extract_report_snippets.py`: trích ngữ cảnh theo trang từ các PDF đã tải.
+- `src/scoring.py`, `src/method.py`: mã tính điểm và mô tả phương pháp nghiên cứu; repo không chứa dashboard.
+- `requirements.txt`: thư viện Python cần cài.
 
-C?c PDF l? BCTN c?a ng?n h?ng ???c ph?n ph?i trong b? d? li?u BCTN tr?n Zenodo. B?n trong repo ???c l?y t? b?n l?u tr? Zenodo; ???ng d?n trong manifest tr? t?i ngu?n n?y. C? th? d?ng m? SHA-256 trong manifest ?? ki?m tra t?nh to?n v?n c?a file.
+Các PDF là BCTN của ngân hàng được phân phối trong bộ dữ liệu BCTN trên Zenodo. Bản trong repo được lấy từ bản lưu trữ Zenodo; đường dẫn trong manifest trỏ tới nguồn này. Có thể dùng mã SHA-256 trong manifest để kiểm tra tính toàn vẹn của file.
 
-## C?i ??t v? ch?y
+## Cài đặt và chạy
 
-Y?u c?u Python 3.10 tr? l?n. M? terminal t?i th? m?c g?c repo v? ch?y:
+Yêu cầu Python 3.10 trở lên. Mở terminal tại thư mục gốc repo và chạy:
 
 ```powershell
 python -m pip install -r requirements.txt
@@ -32,10 +32,10 @@ python src/extract_report_snippets.py
 python src/scoring.py
 ```
 
-L?nh t?i b?o c?o c?n k?t n?i Internet ?? ??c m?c l?c Zenodo. C?ng c? ch? t?i c?c PDF m?c ti?u c?n thi?u. ?? d?ng catalog ri?ng, ch?y `python src/mine_annual_reports.py data/report_catalog.csv`. File m?u trong repo ?ang ?? tr?ng URL; c?n ?i?n URL PDF tr??c khi ch?y theo c?ch n?y.
+Lệnh tải báo cáo cần kết nối Internet để đọc mục lục Zenodo. Công cụ chỉ tải các PDF mục tiêu còn thiếu. Để dùng catalog riêng, chạy `python src/mine_annual_reports.py data/report_catalog.csv`. File mẫu trong repo đang để trống URL; cần điền URL PDF trước khi chạy theo cách này.
 
-## L?u ? khi d?ng d? li?u
+## Lưu ý khi dùng dữ liệu
 
-Tr??c khi so s?nh t? l? giao d?ch s?, ng??i d?ng s? ho?c t? l? t? ??ng h?a, c?n ki?m tra ph?m vi (b?n l? hay to?n ng?n h?ng), m?u s?, k? ?o, ph?m vi h?p nh?t v? ??nh ngh?a ch? ti?u. C?c ng?n h?ng ho?c c?c n?m c? th? d?ng ??nh ngh?a kh?c nhau.
+Trước khi so sánh tỷ lệ giao dịch số, người dùng số hoặc tỷ lệ tự động hóa, cần kiểm tra phạm vi (bán lẻ hay toàn ngân hàng), mẫu số, kỳ đo, phạm vi hợp nhất và định nghĩa chỉ tiêu. Các ngân hàng hoặc các năm có thể dùng định nghĩa khác nhau.
 
-Audit hi?n ghi nh?n nhi?u ti?u ch? ch?a c? ?? ngu?n ??c l?p ??i chi?u. Kh?ng n?n tr?nh b?y BXH nh? k?t qu? ?? ???c ki?m ch?ng ??y ?? ho?c nh? BXH ch?nh th?c c?a Ng?n h?ng Nh? n??c. Khi l?m dashboard, n?n hi?n th? ngu?n, tr?ng th?i ki?m ch?ng v? ?? ph? d? li?u c?ng v?i ?i?m s?.
+Audit hiện ghi nhận nhiều tiêu chí chưa có đủ nguồn độc lập đối chiếu. Không nên trình bày BXH như kết quả đã được kiểm chứng đầy đủ hoặc như BXH chính thức của Ngân hàng Nhà nước. Khi làm dashboard, nên hiển thị nguồn, trạng thái kiểm chứng và độ phủ dữ liệu cùng với điểm số.
