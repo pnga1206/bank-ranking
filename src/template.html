@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BXH Chuyển đổi số Ngân hàng 2023–2025</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--tx:#1b2430;--mut:#5d6b7c;--line:#e2e6ec;--acc:#0b5fff;
+--c1:#0b5fff;--c2:#00a37a;--c3:#e08a00;--c4:#8a4dff;--c5:#d6336c;--c6:#6b7a8c;--warn:#b45309;--warnbg:#fff4e0}
+@media (prefers-color-scheme:dark){:root{--bg:#10151c;--card:#18202a;--tx:#e8edf3;--mut:#9aa8b8;--line:#2a3441;--acc:#6ea0ff;
+--c1:#6ea0ff;--c2:#35c9a0;--c3:#f0b04a;--c4:#b08cff;--c5:#f27aa5;--c6:#93a1b2;--warn:#f0b04a;--warnbg:#2b2312}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1120px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:24px;margin:0 0 4px}h2{font-size:18px;margin:32px 0 10px}
+.sub{color:var(--mut);margin:0 0 16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.rk{font-weight:700;font-size:18px;width:40px}
+.bar{height:10px;border-radius:5px;background:var(--line);position:relative;min-width:120px}
+.bar>i{position:absolute;left:0;top:0;bottom:0;border-radius:5px;background:var(--acc)}
+.badge{display:inline-block;padding:2px 8px;border-radius:99px;font-size:12px;border:1px solid var(--line);color:var(--mut)}
+.badge.low{background:var(--warnbg);color:var(--warn);border-color:transparent}
+.badge.ok{color:var(--c2)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.tabs button,select{font:inherit;padding:6px 12px;border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:8px;cursor:pointer}
+.tabs button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.stack{display:flex;height:22px;border-radius:6px;overflow:hidden;background:var(--line)}
+.stack>span{display:block;height:100%}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--mut);margin:6px 0 12px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px}
+.srow{display:grid;grid-template-columns:110px 1fr 56px;gap:10px;align-items:center;margin:8px 0}
+.note{background:var(--warnbg);color:var(--warn);border-radius:10px;padding:10px 12px;font-size:13.5px;margin:10px 0}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+a{color:var(--acc)}small,.mut{color:var(--mut)}
+.news{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+.news .it{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--card)}
+.tag{font-size:11px;font-weight:700;color:var(--c3)}
+ul{padding-left:18px;margin:6px 0}
+@media (max-width:640px){.srow{grid-template-columns:84px 1fr 48px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Bảng xếp hạng chuyển đổi số ngân hàng 2023–2025</h1>
+  <p class="sub">Nam Á Bank · SHB · VietinBank · Vietcombank · Sacombank — khung tham khảo Bộ chỉ số DBI (doanh nghiệp lớn). Cập nhật 15/10/2026. Tin 2026 chỉ để tham khảo, <b>không tính điểm</b>.</p>
+
+  <div class="note" id="topnote"></div>
+
+  <h2>1. Bảng xếp hạng</h2>
+  <div class="card"><table id="lb"></table></div>
+
+  <h2>2. Điểm đến từ đâu</h2>
+  <div class="card">
+    <div class="tabs" id="tabs"></div>
+    <div class="legend" id="legend"></div>
+    <div id="stacks"></div>
+    <p class="mut" style="font-size:13px;margin:8px 0 0">Mỗi thanh = tổng điểm (0–100) chia theo chỉ tiêu. Thanh ngắn hơn có thể do dữ liệu thiếu, không nhất thiết do làm kém.</p>
+  </div>
+
+  <h2>3. Diễn biến theo năm</h2>
+  <div class="card"><table id="yr"></table></div>
+
+  <h2>4. Minh chứng (số liệu và nguồn)</h2>
+  <div class="card">
+    <div class="filters">
+      <select id="fb"></select><select id="fy"></select><select id="fm"></select>
+    </div>
+    <table id="ev"></table>
+  </div>
+
+  <h2>5. Cập nhật 2026 (không tính điểm)</h2>
+  <div class="news" id="news"></div>
+
+  <h2>6. Phương pháp và giới hạn</h2>
+  <div class="card" id="method"></div>
+</div>
+
+<script>
+const D = /*DATA*/;
+const COL = {tx_share:'var(--c1)',users_m:'var(--c2)',ops_pct:'var(--c3)',milestones:'var(--c4)',strategy:'var(--c5)',recognition:'var(--c6)'};
+const $ = s => document.querySelector(s);
+const fmt = v => v==null?'–':(Math.round(v*10)/10).toString().replace('.',',');
+const banks = Object.keys(D.scores.banks).sort((a,b)=>D.scores.banks[a].rank-D.scores.banks[b].rank);
+const mlabel = m => D.metrics[m].label;
+
+function conf(cov){return cov>=0.7?['Khá','ok']:cov>=0.5?['Trung bình','']:['Thấp','low']}
+
+// topnote
+const lowBanks = banks.filter(b=>D.scores.banks[b].coverage<0.5);
+$('#topnote').innerHTML = '<b>Đọc thận trọng:</b> chênh lệch giữa các ngân hàng nhỏ so với độ không chắc chắn của dữ liệu. '+
+ (lowBanks.length?('Độ phủ dữ liệu thấp (&lt;50%) với <b>'+lowBanks.join(', ')+'</b> — thứ hạng của các ngân hàng này kém tin cậy hơn. '):'')+
+ 'Cột “Hạng 2025” là kiểm tra độ nhạy: nếu hạng đổi nhiều so với hạng trung bình thì kết quả phụ thuộc vào cách gộp năm.';
+
+// leaderboard
+let h = '<tr><th>#</th><th>Ngân hàng</th><th>Điểm TB 2023–25</th><th class="n">2023</th><th class="n">2024</th><th class="n">2025</th><th class="n">Hạng 2025</th><th>Độ phủ dữ liệu</th></tr>';
+banks.forEach(b=>{const d=D.scores.banks[b];const c=conf(d.coverage);
+ h+=`<tr><td class="rk">${d.rank}</td><td><b>${b}</b></td>
+ <td><div style="display:flex;gap:10px;align-items:center"><b style="min-width:44px">${fmt(d.overall)}</b><div class="bar" style="flex:1"><i style="width:${d.overall}%"></i></div></div></td>
+ <td class="n">${fmt(d.yearly['2023'].score)}</td><td class="n">${fmt(d.yearly['2024'].score)}</td><td class="n">${fmt(d.yearly['2025'].score)}</td>
+ <td class="n">${d.rank_2025}</td><td><span class="badge ${c[1]}">${Math.round(d.coverage*100)}% · ${c[0]}</span></td></tr>`;});
+$('#lb').innerHTML=h;
+
+// stacked
+let curTab='avg';
+const tabs=[['avg','Trung bình 2023–25'],['2023','2023'],['2024','2024'],['2025','2025']];
+function renderTabs(){ $('#tabs').innerHTML=tabs.map(t=>`<button class="${t[0]===curTab?'on':''}" data-t="${t[0]}">${t[1]}</button>`).join('');
+ document.querySelectorAll('#tabs button').forEach(bt=>bt.onclick=()=>{curTab=bt.dataset.t;renderTabs();renderStacks();});}
+$('#legend').innerHTML=Object.keys(D.metrics).map(m=>`<span><i style="background:${COL[m]}"></i>${mlabel(m)} (${D.metrics[m].weight}%)</span>`).join('');
+function contribs(b){
+ const d=D.scores.banks[b]; const out={}; let n=0, tot=0;
+ const ys = curTab==='avg'?['2023','2024','2025']:[curTab];
+ ys.forEach(y=>{const yy=d.yearly[y]; if(yy.score==null) return; n++; tot+=yy.score;
+   Object.entries(yy.metrics).forEach(([m,v])=>{out[m]=(out[m]||0)+v.contribution;});});
+ Object.keys(out).forEach(m=>out[m]/=n); return {out,score:n?tot/n:null};}
+function renderStacks(){
+ $('#stacks').innerHTML=banks.map(b=>{const {out,score}=contribs(b);
+  const segs=Object.keys(D.metrics).filter(m=>out[m]).map(m=>`<span title="${mlabel(m)}: ${fmt(out[m])} điểm" style="width:${out[m]}%;background:${COL[m]}"></span>`).join('');
+  return `<div class="srow"><b>${b}</b><div class="stack">${segs}</div><b class="n" style="text-align:right">${fmt(score)}</b></div>`}).join('');}
+renderTabs();renderStacks();
+
+// yearly table w/ metrics
+let y='<tr><th>Ngân hàng</th><th>Năm</th><th class="n">Điểm</th><th class="n">Độ phủ</th>'+Object.keys(D.metrics).map(m=>`<th class="n">${mlabel(m)}</th>`).join('')+'</tr>';
+banks.forEach(b=>{['2023','2024','2025'].forEach(yr=>{const e=D.scores.banks[b].yearly[yr];
+ y+=`<tr><td>${yr==='2023'?'<b>'+b+'</b>':''}</td><td>${yr}</td><td class="n"><b>${fmt(e.score)}</b></td><td class="n">${Math.round(e.coverage*100)}%</td>`+
+ Object.keys(D.metrics).map(m=>{const v=e.metrics[m];return `<td class="n">${v?fmt(v.value)+' <small>('+fmt(v.score)+')</small>':'<span class="mut">–</span>'}</td>`}).join('')+'</tr>';});});
+$('#yr').innerHTML=y+'';
+$('#yr').insertAdjacentHTML('afterend','<p class="mut" style="font-size:13px;margin:8px 0 0">Ô số liệu: giá trị gốc (điểm quy đổi 0–100). “–” = chưa tìm thấy số liệu công bố đáng tin cậy, không bị tính là 0.</p>');
+
+// evidence
+const opt=(sel,vals,all)=>{$(sel).innerHTML=`<option value="">${all}</option>`+vals.map(v=>`<option value="${v[0]}">${v[1]}</option>`).join('')};
+opt('#fb',banks.map(b=>[b,b]),'Tất cả ngân hàng');opt('#fy',['2023','2024','2025'].map(v=>[v,v]),'Tất cả năm');
+opt('#fm',Object.keys(D.metrics).map(m=>[m,mlabel(m)]),'Tất cả chỉ tiêu');
+function renderEv(){const fb=$('#fb').value,fy=$('#fy').value,fm=$('#fm').value;
+ const rows=D.evidence.filter(r=>(!fb||r.bank===fb)&&(!fy||r.year===fy)&&(!fm||r.metric===fm));
+ $('#ev').innerHTML='<tr><th>Ngân hàng</th><th>Năm</th><th>Chỉ tiêu</th><th class="n">Giá trị</th><th>Ghi chú</th><th>Loại</th><th>Nguồn</th></tr>'+
+ rows.map(r=>`<tr><td>${r.bank}</td><td>${r.year}</td><td>${mlabel(r.metric)}</td><td class="n"><b>${fmt(parseFloat(r.value))}</b> <small>${r.unit}</small></td>
+ <td>${r.note}${r.scored==='0'?' <span class="badge low">không tính điểm</span>':''}<br><small class="mut">mốc: ${r.as_of}</small></td>
+ <td><span class="badge">${r.kind==='reported'?'số công bố':'chấm theo thang'}</span></td><td><a href="${r.url}" target="_blank" rel="noopener">${r.source_title}</a></td></tr>`).join('');}
+['#fb','#fy','#fm'].forEach(s=>$(s).onchange=renderEv);renderEv();
+
+// news
+$('#news').innerHTML=D.news.map(n=>`<div class="it"><span class="tag">${n.bank} · ${n.date}</span><div>${n.headline}</div>${n.note?`<small class="mut">${n.note}</small><br>`:''}<a href="${n.url}" target="_blank" rel="noopener"><small>Nguồn</small></a></div>`).join('');
+
+// method
+$('#method').innerHTML=`
+<p><b>Khung tham khảo.</b> ${D.method.dbi}</p>
+<table><tr><th>Chỉ tiêu</th><th>Trụ cột DBI tham chiếu</th><th class="n">Trọng số</th><th>Cách quy điểm 0–100</th></tr>
+${D.method.rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td class="n">${r[2]}%</td><td>${r[3]}</td></tr>`).join('')}</table>
+<p><b>Giới hạn quan trọng</b></p><ul>${D.method.limits.map(l=>`<li>${l}</li>`).join('')}</ul>
+<p><b>Nguồn khung DBI:</b> ${D.method.dbi_sources.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`).join(' · ')}</p>`;
+</script>
+</body>
+</html>
