@@ -1,28 +1,29 @@
-# Bank DX Ranking: data and research pipeline
+# Bank DX Ranking: d? li?u v? pipeline nghi?n c?u
 
-This repository contains a research dataset on digital transformation for five Vietnamese banks (VCB, VietinBank/CTG, SHB, Sacombank/STB, and Nam A Bank/NAB), covering 2023-2025. It is a group research ranking informed by DBI, not an official ranking issued by the State Bank of Vietnam.
+Repo l?u d? li?u nghi?n c?u chuy?n ??i s? c?a 5 ng?n h?ng Vi?t Nam (VCB, VietinBank/CTG, SHB, Sacombank/STB v? Nam A Bank/NAB), giai ?o?n 2023?2025. ??y l? BXH nghi?n c?u c?a nh?m tham kh?o DBI, kh?ng ph?i BXH ch?nh th?c do Ng?n h?ng Nh? n??c c?ng b?.
 
-## Repository structure
+## C?u tr?c repo
 
-- `data/evidence.csv`: observations currently used as scoring inputs, with bank, year, metric, value, and current source.
-- `data/evidence_source_matrix.csv`: original sources and annual-report excerpts suggested for review. `match_status` distinguishes exact numeric corroboration from topic-only context.
-- `data/evidence_audit_summary.csv`: review status for each bank/year/metric. Excerpts with different definitions are not treated as corroboration.
-- `data/news_2026.csv`: collected related news items.
-- `data/scores.json`: research ranking generated from `evidence.csv` and the current scoring weights.
-- `data/annual_reports/`: 15 annual report PDFs (five banks x three years), about 195 MB.
-- `data/annual_reports_manifest.csv`: source, filename, download status, and SHA-256 for each report.
-- `data/annual_report_keyword_counts.csv`: keyword counts in the reports.
-- `data/annual_report_snippets.csv`: short page-linked excerpts for manual review. These are search aids, not self-validating evidence.
-- `data/report_catalog.csv`: optional CSV template for direct PDF URLs when running the miner with a custom catalog.
-- `src/mine_annual_reports.py`: reads the Zenodo index, downloads matching PDFs (not the entire ZIP), and creates the manifest and keyword counts.
-- `src/extract_report_snippets.py`: extracts page contexts from downloaded PDFs.
-- `src/scoring.py` and `src/method.py`: scoring and research-method definitions; no dashboard is included.
+- `data/evidence.csv`: c?c quan s?t ?ang d?ng ?? ch?m ?i?m, g?m ng?n h?ng, n?m, ti?u ch?, gi? tr? v? ngu?n hi?n c?.
+- `data/scores.json`: ?i?m nghi?n c?u t?ng h?p t? `evidence.csv` theo tr?ng s? hi?n t?i.
+- `data/evidence_source_matrix.csv`: ngu?n g?c v? tr?ch ?o?n BCTN ?? ??i chi?u. C?t `match_status` ph?n bi?t ngu?n kh?p s? li?u v?i tr?ch ?o?n ch? li?n quan ch? ??.
+- `data/evidence_audit_summary.csv`: tr?ng th?i r? so?t theo ng?n h?ng/n?m/ti?u ch?; cho bi?t ti?u ch? c?n thi?u ngu?n ??i chi?u.
+- `data/news_2026.csv`: c?c tin t?c li?n quan ?? thu th?p.
+- `data/annual_reports/`: 15 file PDF BCTN (5 ng?n h?ng ? 3 n?m), t?ng dung l??ng kho?ng 195 MB.
+- `data/annual_reports_manifest.csv`: ngu?n, t?n file, tr?ng th?i t?i v? m? SHA-256 c?a t?ng b?o c?o.
+- `data/annual_report_keyword_counts.csv`: s? l?n xu?t hi?n t? kh?a trong t?ng b?o c?o.
+- `data/annual_report_snippets.csv`: tr?ch ?o?n ng?n k?m s? trang ?? h? tr? r? so?t th? c?ng; tr?ch ?o?n kh?ng t? x?c nh?n t?nh ??ng ??n c?a ?i?m.
+- `data/report_catalog.csv`: m?u CSV t?y ch?n ?? cung c?p URL PDF tr?c ti?p khi ch?y c?ng c? t?i v?i catalog ri?ng.
+- `src/mine_annual_reports.py`: l?y m?c l?c Zenodo, t?i c?c PDF kh?p ng?n h?ng/n?m v? t?o manifest c?ng th?ng k? t? kh?a. C?ng c? t?i c?c b?o c?o m?c ti?u, kh?ng t?i to?n b? ZIP.
+- `src/extract_report_snippets.py`: tr?ch ng? c?nh theo trang t? c?c PDF ?? t?i.
+- `src/scoring.py`, `src/method.py`: m? t?nh ?i?m v? m? t? ph??ng ph?p nghi?n c?u; repo kh?ng ch?a dashboard.
+- `requirements.txt`: th? vi?n Python c?n c?i.
 
-The PDFs are annual reports from the banks distributed in a Zenodo BCTN dataset. The local copies came from the Zenodo mirror, and the manifest links to that mirror. Use the SHA-256 values in the manifest to check file integrity.
+C?c PDF l? BCTN c?a ng?n h?ng ???c ph?n ph?i trong b? d? li?u BCTN tr?n Zenodo. B?n trong repo ???c l?y t? b?n l?u tr? Zenodo; ???ng d?n trong manifest tr? t?i ngu?n n?y. C? th? d?ng m? SHA-256 trong manifest ?? ki?m tra t?nh to?n v?n c?a file.
 
-## Install and run
+## C?i ??t v? ch?y
 
-Python 3.10 or later is required. From the repository root:
+Y?u c?u Python 3.10 tr? l?n. M? terminal t?i th? m?c g?c repo v? ch?y:
 
 ```powershell
 python -m pip install -r requirements.txt
@@ -31,8 +32,10 @@ python src/extract_report_snippets.py
 python src/scoring.py
 ```
 
-The miner needs an internet connection to read the Zenodo index. It downloads only missing target PDFs. To use a custom catalog, run `python src/mine_annual_reports.py data/report_catalog.csv`. The checked-in template has blank URLs and must be filled before use this way.
+L?nh t?i b?o c?o c?n k?t n?i Internet ?? ??c m?c l?c Zenodo. C?ng c? ch? t?i c?c PDF m?c ti?u c?n thi?u. ?? d?ng catalog ri?ng, ch?y `python src/mine_annual_reports.py data/report_catalog.csv`. File m?u trong repo ?ang ?? tr?ng URL; c?n ?i?n URL PDF tr??c khi ch?y theo c?ch n?y.
 
-## Research limitations
+## L?u ? khi d?ng d? li?u
 
-Before comparing transaction shares, digital users, or automation rates, confirm scope (retail or whole bank), denominator, measurement period, consolidation basis, and metric definition. Definitions may differ by bank and year. The audit currently shows that many criteria still lack independent corroboration; do not present the ranking as fully verified or official.
+Tr??c khi so s?nh t? l? giao d?ch s?, ng??i d?ng s? ho?c t? l? t? ??ng h?a, c?n ki?m tra ph?m vi (b?n l? hay to?n ng?n h?ng), m?u s?, k? ?o, ph?m vi h?p nh?t v? ??nh ngh?a ch? ti?u. C?c ng?n h?ng ho?c c?c n?m c? th? d?ng ??nh ngh?a kh?c nhau.
+
+Audit hi?n ghi nh?n nhi?u ti?u ch? ch?a c? ?? ngu?n ??c l?p ??i chi?u. Kh?ng n?n tr?nh b?y BXH nh? k?t qu? ?? ???c ki?m ch?ng ??y ?? ho?c nh? BXH ch?nh th?c c?a Ng?n h?ng Nh? n??c. Khi l?m dashboard, n?n hi?n th? ngu?n, tr?ng th?i ki?m ch?ng v? ?? ph? d? li?u c?ng v?i ?i?m s?.
