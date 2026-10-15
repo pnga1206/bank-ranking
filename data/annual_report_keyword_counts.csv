@@ -1,0 +1,170 @@
+﻿ticker,bank,year,file,keyword,count
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,chuyển đổi số,112
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,ngân hàng số,22
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,kênh số,11
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,dữ liệu lớn,2
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,trí tuệ nhân tạo,2
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,điện toán đám mây,1
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,tự động hóa,9
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,sinh trắc học,3
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,open banking,2
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,api,8
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,an ninh mạng,3
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,an toàn thông tin,1
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,digital transformation,1
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,ekyc,1
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,tài chính số,1
+CTG,VietinBank,2023,data/annual_reports/CTG_2023_annual_report.pdf,hệ sinh thái số,1
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,chuyển đổi số,336
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,ngân hàng số,15
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,giao dịch số,1
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,kênh số,10
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,dữ liệu lớn,3
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,điện toán đám mây,1
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,cloud,2
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,big data,5
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,machine learning,3
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,tự động hóa,9
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,sinh trắc học,4
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,open banking,2
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,api,8
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,an ninh mạng,8
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,an toàn thông tin,1
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,ekyc,2
+CTG,VietinBank,2024,data/annual_reports/CTG_2024_annual_report.pdf,tài chính số,2
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,chuyển đổi số,6
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,ngân hàng số,13
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,giao dịch số,2
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,kênh số,16
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,dữ liệu lớn,6
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,trí tuệ nhân tạo,21
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,điện toán đám mây,1
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,cloud,3
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,big data,4
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,machine learning,4
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,tự động hóa,5
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,open banking,3
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,api,9
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,an ninh mạng,2
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,an toàn thông tin,1
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,digital transformation,1
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,ekyc,4
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,tài chính số,3
+CTG,VietinBank,2025,data/annual_reports/CTG_2025_annual_report.pdf,hệ sinh thái số,3
+SHB,SHB,2024,data/annual_reports/SHB_2024_annual_report.pdf,chuyển đổi số,30
+SHB,SHB,2024,data/annual_reports/SHB_2024_annual_report.pdf,ngân hàng số,25
+SHB,SHB,2024,data/annual_reports/SHB_2024_annual_report.pdf,giao dịch số,1
+SHB,SHB,2024,data/annual_reports/SHB_2024_annual_report.pdf,kênh số,10
+SHB,SHB,2024,data/annual_reports/SHB_2024_annual_report.pdf,dữ liệu lớn,3
+SHB,SHB,2024,data/annual_reports/SHB_2024_annual_report.pdf,trí tuệ nhân tạo,3
+SHB,SHB,2024,data/annual_reports/SHB_2024_annual_report.pdf,điện toán đám mây,2
+SHB,SHB,2024,data/annual_reports/SHB_2024_annual_report.pdf,big data,3
+SHB,SHB,2024,data/annual_reports/SHB_2024_annual_report.pdf,tự động hóa,13
+SHB,SHB,2024,data/annual_reports/SHB_2024_annual_report.pdf,sinh trắc học,4
+SHB,SHB,2024,data/annual_reports/SHB_2024_annual_report.pdf,open banking,1
+SHB,SHB,2024,data/annual_reports/SHB_2024_annual_report.pdf,digital banking,1
+SHB,SHB,2024,data/annual_reports/SHB_2024_annual_report.pdf,ekyc,1
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,chuyển đổi số,43
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,ngân hàng số,29
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,kênh số,5
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,dữ liệu lớn,3
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,trí tuệ nhân tạo,4
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,điện toán đám mây,1
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,cloud,3
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,big data,6
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,tự động hóa,6
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,sinh trắc học,1
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,open banking,2
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,api,4
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,an ninh mạng,1
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,an toàn thông tin,4
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,ekyc,3
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,tài chính số,3
+SHB,SHB,2025,data/annual_reports/SHB_2025_annual_report.pdf,hệ sinh thái số,3
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,chuyển đổi số,30
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,ngân hàng số,13
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,giao dịch số,1
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,kênh số,6
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,khách hàng số,1
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,dữ liệu lớn,3
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,điện toán đám mây,1
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,big data,1
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,tự động hóa,5
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,sinh trắc học,7
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,open banking,1
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,api,1
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,an ninh mạng,2
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,an toàn thông tin,1
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,ekyc,1
+STB,Sacombank,2024,data/annual_reports/STB_2024_annual_report.pdf,tài chính số,8
+STB,Sacombank,2025,data/annual_reports/STB_2025_annual_report.pdf,chuyển đổi số,23
+STB,Sacombank,2025,data/annual_reports/STB_2025_annual_report.pdf,ngân hàng số,20
+STB,Sacombank,2025,data/annual_reports/STB_2025_annual_report.pdf,kênh số,11
+STB,Sacombank,2025,data/annual_reports/STB_2025_annual_report.pdf,dữ liệu lớn,2
+STB,Sacombank,2025,data/annual_reports/STB_2025_annual_report.pdf,trí tuệ nhân tạo,1
+STB,Sacombank,2025,data/annual_reports/STB_2025_annual_report.pdf,big data,2
+STB,Sacombank,2025,data/annual_reports/STB_2025_annual_report.pdf,tự động hóa,2
+STB,Sacombank,2025,data/annual_reports/STB_2025_annual_report.pdf,sinh trắc học,1
+STB,Sacombank,2025,data/annual_reports/STB_2025_annual_report.pdf,open banking,1
+STB,Sacombank,2025,data/annual_reports/STB_2025_annual_report.pdf,api,1
+STB,Sacombank,2025,data/annual_reports/STB_2025_annual_report.pdf,an ninh mạng,3
+STB,Sacombank,2025,data/annual_reports/STB_2025_annual_report.pdf,an toàn thông tin,5
+STB,Sacombank,2025,data/annual_reports/STB_2025_annual_report.pdf,ekyc,2
+STB,Sacombank,2025,data/annual_reports/STB_2025_annual_report.pdf,tài chính số,5
+STB,Sacombank,2025,data/annual_reports/STB_2025_annual_report.pdf,hệ sinh thái số,2
+VCB,VCB,2023,data/annual_reports/VCB_2023_annual_report.pdf,chuyển đổi số,19
+VCB,VCB,2023,data/annual_reports/VCB_2023_annual_report.pdf,ngân hàng số,4
+VCB,VCB,2023,data/annual_reports/VCB_2023_annual_report.pdf,kênh số,2
+VCB,VCB,2023,data/annual_reports/VCB_2023_annual_report.pdf,trí tuệ nhân tạo,2
+VCB,VCB,2023,data/annual_reports/VCB_2023_annual_report.pdf,điện toán đám mây,1
+VCB,VCB,2023,data/annual_reports/VCB_2023_annual_report.pdf,artificial intelligence,1
+VCB,VCB,2023,data/annual_reports/VCB_2023_annual_report.pdf,tự động hóa,1
+VCB,VCB,2023,data/annual_reports/VCB_2023_annual_report.pdf,api,2
+VCB,VCB,2024,data/annual_reports/VCB_2024_annual_report.pdf,chuyển đổi số,13
+VCB,VCB,2024,data/annual_reports/VCB_2024_annual_report.pdf,ngân hàng số,7
+VCB,VCB,2024,data/annual_reports/VCB_2024_annual_report.pdf,kênh số,4
+VCB,VCB,2024,data/annual_reports/VCB_2024_annual_report.pdf,dữ liệu lớn,4
+VCB,VCB,2024,data/annual_reports/VCB_2024_annual_report.pdf,trí tuệ nhân tạo,1
+VCB,VCB,2024,data/annual_reports/VCB_2024_annual_report.pdf,cloud,1
+VCB,VCB,2024,data/annual_reports/VCB_2024_annual_report.pdf,big data,3
+VCB,VCB,2024,data/annual_reports/VCB_2024_annual_report.pdf,artificial intelligence,1
+VCB,VCB,2024,data/annual_reports/VCB_2024_annual_report.pdf,tự động hóa,1
+VCB,VCB,2024,data/annual_reports/VCB_2024_annual_report.pdf,sinh trắc học,3
+VCB,VCB,2024,data/annual_reports/VCB_2024_annual_report.pdf,hệ sinh thái số,1
+VCB,VCB,2025,data/annual_reports/VCB_2025_annual_report.pdf,chuyển đổi số,26
+VCB,VCB,2025,data/annual_reports/VCB_2025_annual_report.pdf,ngân hàng số,17
+VCB,VCB,2025,data/annual_reports/VCB_2025_annual_report.pdf,giao dịch số,1
+VCB,VCB,2025,data/annual_reports/VCB_2025_annual_report.pdf,kênh số,7
+VCB,VCB,2025,data/annual_reports/VCB_2025_annual_report.pdf,dữ liệu lớn,2
+VCB,VCB,2025,data/annual_reports/VCB_2025_annual_report.pdf,trí tuệ nhân tạo,6
+VCB,VCB,2025,data/annual_reports/VCB_2025_annual_report.pdf,artificial intelligence,1
+VCB,VCB,2025,data/annual_reports/VCB_2025_annual_report.pdf,tự động hóa,3
+VCB,VCB,2025,data/annual_reports/VCB_2025_annual_report.pdf,sinh trắc học,4
+VCB,VCB,2025,data/annual_reports/VCB_2025_annual_report.pdf,an toàn thông tin,1
+VCB,VCB,2025,data/annual_reports/VCB_2025_annual_report.pdf,digital transformation,1
+VCB,VCB,2025,data/annual_reports/VCB_2025_annual_report.pdf,ekyc,1
+VCB,VCB,2025,data/annual_reports/VCB_2025_annual_report.pdf,hệ sinh thái số,1
+STB,Sacombank,2023,data/annual_reports/STB_2023_annual_report.pdf,chuyển đổi số,26
+STB,Sacombank,2023,data/annual_reports/STB_2023_annual_report.pdf,ngân hàng số,20
+STB,Sacombank,2023,data/annual_reports/STB_2023_annual_report.pdf,giao dịch số,5
+STB,Sacombank,2023,data/annual_reports/STB_2023_annual_report.pdf,kênh số,6
+STB,Sacombank,2023,data/annual_reports/STB_2023_annual_report.pdf,khách hàng số,1
+STB,Sacombank,2023,data/annual_reports/STB_2023_annual_report.pdf,dữ liệu lớn,1
+STB,Sacombank,2023,data/annual_reports/STB_2023_annual_report.pdf,trí tuệ nhân tạo,2
+STB,Sacombank,2023,data/annual_reports/STB_2023_annual_report.pdf,điện toán đám mây,1
+STB,Sacombank,2023,data/annual_reports/STB_2023_annual_report.pdf,cloud,3
+STB,Sacombank,2023,data/annual_reports/STB_2023_annual_report.pdf,tự động hóa,1
+STB,Sacombank,2023,data/annual_reports/STB_2023_annual_report.pdf,open banking,1
+STB,Sacombank,2023,data/annual_reports/STB_2023_annual_report.pdf,api,3
+STB,Sacombank,2023,data/annual_reports/STB_2023_annual_report.pdf,an ninh mạng,2
+STB,Sacombank,2023,data/annual_reports/STB_2023_annual_report.pdf,an toàn thông tin,3
+STB,Sacombank,2023,data/annual_reports/STB_2023_annual_report.pdf,ekyc,1
+SHB,SHB,2023,data/annual_reports/SHB_2023_annual_report.pdf,chuyển đổi số,20
+SHB,SHB,2023,data/annual_reports/SHB_2023_annual_report.pdf,ngân hàng số,14
+SHB,SHB,2023,data/annual_reports/SHB_2023_annual_report.pdf,kênh số,3
+SHB,SHB,2023,data/annual_reports/SHB_2023_annual_report.pdf,trí tuệ nhân tạo,1
+SHB,SHB,2023,data/annual_reports/SHB_2023_annual_report.pdf,cloud,1
+SHB,SHB,2023,data/annual_reports/SHB_2023_annual_report.pdf,tự động hóa,3
+SHB,SHB,2023,data/annual_reports/SHB_2023_annual_report.pdf,api,1
+SHB,SHB,2023,data/annual_reports/SHB_2023_annual_report.pdf,digital banking,1
+SHB,SHB,2023,data/annual_reports/SHB_2023_annual_report.pdf,ekyc,1

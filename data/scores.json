@@ -1,0 +1,427 @@
+{
+ "weights": {
+  "tx_share": 30,
+  "users_m": 25,
+  "ops_pct": 15,
+  "milestones": 15,
+  "strategy": 10,
+  "recognition": 5
+ },
+ "banks": {
+  "VCB": {
+   "yearly": {
+    "2023": {
+     "metrics": {
+      "tx_share": {
+       "value": 98.0,
+       "score": 90.0,
+       "contribution": 41.54
+      },
+      "users_m": {
+       "value": 10.0,
+       "score": 55.6,
+       "contribution": 21.37
+      },
+      "strategy": {
+       "value": 70.0,
+       "score": 70.0,
+       "contribution": 10.77
+      }
+     },
+     "score": 73.7,
+     "coverage": 0.65
+    },
+    "2024": {
+     "metrics": {
+      "tx_share": {
+       "value": 92.0,
+       "score": 60.0,
+       "contribution": 22.5
+      },
+      "users_m": {
+       "value": 13.0,
+       "score": 72.2,
+       "contribution": 22.57
+      },
+      "milestones": {
+       "value": 2.0,
+       "score": 66.7,
+       "contribution": 12.5
+      },
+      "strategy": {
+       "value": 70.0,
+       "score": 70.0,
+       "contribution": 8.75
+      }
+     },
+     "score": 66.3,
+     "coverage": 0.8
+    },
+    "2025": {
+     "metrics": {
+      "tx_share": {
+       "value": 99.0,
+       "score": 95.0,
+       "contribution": 35.62
+      },
+      "users_m": {
+       "value": 17.0,
+       "score": 94.4,
+       "contribution": 29.51
+      },
+      "milestones": {
+       "value": 2.0,
+       "score": 66.7,
+       "contribution": 12.5
+      },
+      "strategy": {
+       "value": 70.0,
+       "score": 70.0,
+       "contribution": 8.75
+      }
+     },
+     "score": 86.4,
+     "coverage": 0.8
+    }
+   },
+   "overall": 75.5,
+   "coverage": 0.75,
+   "s2025": 86.4,
+   "rank": 1,
+   "rank_2025": 1
+  },
+  "VietinBank": {
+   "yearly": {
+    "2023": {
+     "metrics": {
+      "tx_share": {
+       "value": 90.5,
+       "score": 52.5,
+       "contribution": 18.53
+      },
+      "users_m": {
+       "value": 7.4,
+       "score": 41.1,
+       "contribution": 12.09
+      },
+      "ops_pct": {
+       "value": 65.0,
+       "score": 65.0,
+       "contribution": 11.47
+      },
+      "strategy": {
+       "value": 85.0,
+       "score": 85.0,
+       "contribution": 10.0
+      },
+      "recognition": {
+       "value": 1.0,
+       "score": 33.3,
+       "contribution": 1.96
+      }
+     },
+     "score": 54.1,
+     "coverage": 0.85
+    },
+    "2024": {
+     "metrics": {
+      "tx_share": {
+       "value": 92.9,
+       "score": 64.5,
+       "contribution": 24.19
+      },
+      "users_m": {
+       "value": 9.0,
+       "score": 50.0,
+       "contribution": 15.62
+      },
+      "milestones": {
+       "value": 1.0,
+       "score": 33.3,
+       "contribution": 6.25
+      },
+      "strategy": {
+       "value": 100.0,
+       "score": 100.0,
+       "contribution": 12.5
+      }
+     },
+     "score": 58.6,
+     "coverage": 0.8
+    },
+    "2025": {
+     "metrics": {
+      "tx_share": {
+       "value": 99.0,
+       "score": 95.0,
+       "contribution": 47.5
+      },
+      "milestones": {
+       "value": 1.0,
+       "score": 33.3,
+       "contribution": 8.33
+      },
+      "strategy": {
+       "value": 100.0,
+       "score": 100.0,
+       "contribution": 16.67
+      },
+      "recognition": {
+       "value": 1.0,
+       "score": 33.3,
+       "contribution": 2.78
+      }
+     },
+     "score": 75.3,
+     "coverage": 0.6
+    }
+   },
+   "overall": 62.7,
+   "coverage": 0.75,
+   "s2025": 75.3,
+   "rank": 3,
+   "rank_2025": 2
+  },
+  "SHB": {
+   "yearly": {
+    "2023": {
+     "metrics": {
+      "tx_share": {
+       "value": 90.0,
+       "score": 50.0,
+       "contribution": 33.33
+      },
+      "ops_pct": {
+       "value": 90.0,
+       "score": 90.0,
+       "contribution": 30.0
+      }
+     },
+     "score": 63.3,
+     "coverage": 0.45
+    },
+    "2024": {
+     "metrics": {
+      "tx_share": {
+       "value": 90.0,
+       "score": 50.0,
+       "contribution": 21.43
+      },
+      "ops_pct": {
+       "value": 90.0,
+       "score": 90.0,
+       "contribution": 19.29
+      },
+      "milestones": {
+       "value": 1.0,
+       "score": 33.3,
+       "contribution": 7.14
+      },
+      "strategy": {
+       "value": 70.0,
+       "score": 70.0,
+       "contribution": 10.0
+      }
+     },
+     "score": 57.9,
+     "coverage": 0.7
+    },
+    "2025": {
+     "metrics": {
+      "milestones": {
+       "value": 2.0,
+       "score": 66.7,
+       "contribution": 13.33
+      },
+      "strategy": {
+       "value": 70.0,
+       "score": 70.0,
+       "contribution": 9.33
+      },
+      "recognition": {
+       "value": 1.0,
+       "score": 33.3,
+       "contribution": 2.22
+      },
+      "tx_share": {
+       "value": 90.0,
+       "score": 50.0,
+       "contribution": 20.0
+      },
+      "ops_pct": {
+       "value": 90.0,
+       "score": 90.0,
+       "contribution": 18.0
+      }
+     },
+     "score": 62.9,
+     "coverage": 0.75
+    }
+   },
+   "overall": 61.4,
+   "coverage": 0.63,
+   "s2025": 62.9,
+   "rank": 4,
+   "rank_2025": 5
+  },
+  "Sacombank": {
+   "yearly": {
+    "2023": {
+     "metrics": {
+      "tx_share": {
+       "value": 97.0,
+       "score": 85.0,
+       "contribution": 30.0
+      },
+      "users_m": {
+       "value": 7.5,
+       "score": 41.7,
+       "contribution": 12.25
+      },
+      "milestones": {
+       "value": 2.0,
+       "score": 66.7,
+       "contribution": 11.76
+      },
+      "strategy": {
+       "value": 70.0,
+       "score": 70.0,
+       "contribution": 8.24
+      },
+      "recognition": {
+       "value": 3.0,
+       "score": 100.0,
+       "contribution": 5.88
+      }
+     },
+     "score": 68.1,
+     "coverage": 0.85
+    },
+    "2024": {
+     "metrics": {
+      "users_m": {
+       "value": 12.7,
+       "score": 70.6,
+       "contribution": 32.07
+      },
+      "milestones": {
+       "value": 1.0,
+       "score": 33.3,
+       "contribution": 9.09
+      },
+      "strategy": {
+       "value": 70.0,
+       "score": 70.0,
+       "contribution": 12.73
+      },
+      "recognition": {
+       "value": 1.0,
+       "score": 33.3,
+       "contribution": 3.03
+      }
+     },
+     "score": 56.9,
+     "coverage": 0.55
+    },
+    "2025": {
+     "metrics": {
+      "tx_share": {
+       "value": 96.0,
+       "score": 80.0,
+       "contribution": 48.0
+      },
+      "milestones": {
+       "value": 2.0,
+       "score": 66.7,
+       "contribution": 20.0
+      },
+      "recognition": {
+       "value": 1.0,
+       "score": 33.3,
+       "contribution": 3.33
+      }
+     },
+     "score": 71.3,
+     "coverage": 0.5
+    }
+   },
+   "overall": 65.4,
+   "coverage": 0.63,
+   "s2025": 71.3,
+   "rank": 2,
+   "rank_2025": 3
+  },
+  "Nam A Bank": {
+   "yearly": {
+    "2023": {
+     "metrics": {
+      "tx_share": {
+       "value": 92.0,
+       "score": 60.0,
+       "contribution": 36.0
+      },
+      "milestones": {
+       "value": 1.0,
+       "score": 33.3,
+       "contribution": 10.0
+      },
+      "recognition": {
+       "value": 3.0,
+       "score": 100.0,
+       "contribution": 10.0
+      }
+     },
+     "score": 56.0,
+     "coverage": 0.5
+    },
+    "2024": {
+     "metrics": {
+      "milestones": {
+       "value": 2.0,
+       "score": 66.7,
+       "contribution": 33.33
+      },
+      "strategy": {
+       "value": 40.0,
+       "score": 40.0,
+       "contribution": 13.33
+      },
+      "recognition": {
+       "value": 2.0,
+       "score": 66.7,
+       "contribution": 11.11
+      }
+     },
+     "score": 57.8,
+     "coverage": 0.3
+    },
+    "2025": {
+     "metrics": {
+      "tx_share": {
+       "value": 97.0,
+       "score": 85.0,
+       "contribution": 51.0
+      },
+      "milestones": {
+       "value": 1.0,
+       "score": 33.3,
+       "contribution": 10.0
+      },
+      "recognition": {
+       "value": 1.0,
+       "score": 33.3,
+       "contribution": 3.33
+      }
+     },
+     "score": 64.3,
+     "coverage": 0.5
+    }
+   },
+   "overall": 59.4,
+   "coverage": 0.43,
+   "s2025": 64.3,
+   "rank": 5,
+   "rank_2025": 4
+  }
+ }
+}

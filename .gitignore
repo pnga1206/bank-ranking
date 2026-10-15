@@ -2,8 +2,3 @@ __pycache__/
 *.pyc
 .venv/
 output/
-data/annual_reports/
-data/annual_reports_manifest.csv
-data/annual_report_keyword_counts.csv
-data/annual_report_snippets.csv
-data/report_catalog.csv
