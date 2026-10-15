@@ -1,21 +1,27 @@
-# BXH chuyển đổi số ngân hàng 2023–2025
+# Xếp hạng chuyển đổi số ngân hàng
 
-Ngân hàng: VCB, VietinBank, SHB, Sacombank, Nam A Bank. Khung tham khảo: DBI doanh nghiệp lớn.
+Dashboard Streamlit cho 5 ngân hàng (VCB, VietinBank, SHB, Sacombank, Nam A Bank), dữ liệu điểm giai đoạn 2023–2025.
 
-## Chạy (VS Code, Python 3.9+)
+## Chạy dashboard
 
-```bash
-python src/seed_evidence.py     # data/evidence.csv + data/news_2026.csv
-python src/scoring.py           # output/scores.json
-python src/build_dashboard.py   # output/dashboard.html  <- mở file này
-# tuỳ chọn, cần internet: pip install requests && python src/scrape.py
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python -m streamlit run src/app.py
 ```
 
-## Cấu trúc
-- `data/evidence.csv` – mỗi dòng 1 số liệu + link nguồn + từ khóa kiểm chứng
-- `data/news_2026.csv` – tin 2026, không tính điểm
-- `src/scoring.py` – trọng số, quy điểm, xếp hạng, độ phủ dữ liệu
-- `output/dashboard.html` – dashboard (file đơn)
+Mở URL Streamlit in ra terminal, thường là `http://localhost:8501`.
 
-## Lưu ý
-Không phải điểm DBI chính thức; xem mục “Phương pháp và giới hạn” trong dashboard.
+## Dữ liệu dashboard dùng
+
+- `data/evidence.csv`: quan sát điểm theo ngân hàng/năm/tiêu chí, ghi nguồn trong `url`; `scored=1` được tính, `scored=0` bị loại mặc định.
+- `data/news_2026.csv`: tin 2026 để tham khảo, không tính điểm. Đây là CSV tĩnh, chưa tự cập nhật.
+- `src/scoring.py`: danh sách tiêu chí, trọng số, chuẩn hóa điểm.
+- `src/method.py`: diễn giải phương pháp và nguồn tham khảo DBI.
+
+## Giới hạn dữ liệu
+
+Đây là BXH nghiên cứu của nhóm dựa trên nguồn công khai, không phải BXH hay điểm DBI do NHNN ban hành. Độ phủ giữa các ngân hàng khác nhau; định nghĩa các số liệu công bố chưa chắc đồng nhất. `evidence.csv` hiện có một URL cho mỗi dòng, chưa đảm bảo 2–3 minh chứng độc lập cho từng tiêu chí. Tin tức cần được rà và cập nhật thủ công.
+
+Xem [HANDOFF_CODER2.md](HANDOFF_CODER2.md) để biết cách dùng dữ liệu và yêu cầu dashboard tiếp theo.
