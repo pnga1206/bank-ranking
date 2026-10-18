@@ -84,13 +84,12 @@ for m, (full, short, pillar) in U.METRICS.items():
     g = mlb[mlb["metric"] == m]
     if g.empty:
         rows.append({"Chỉ tiêu": full, "Trụ cột": pillar, "Trọng số (%)": U.weights()[m], "Điểm (0–100)": None,
-                     "Giá trị gốc": "—", "Đóng góp": None, "Trạng thái": "Không có bằng chứng công khai (chưa chấm)"})
+                     "Giá trị gốc": "—", "Đóng góp": None})
     else:
         unit = g["unit"].iloc[0] if "unit" in g and isinstance(g["unit"].iloc[0], str) else ""
         vals = "; ".join(f"{int(r.year)}: {r.value:g}" for r in g.sort_values("year").itertuples())
         rows.append({"Chỉ tiêu": full, "Trụ cột": pillar, "Trọng số (%)": U.weights()[m], "Điểm (0–100)": g["score"].mean(),
-                     "Giá trị gốc": f"{vals} {unit}".strip(), "Đóng góp": g["contribution"].mean(),
-                     "Trạng thái": "⚠ Cần thêm nguồn độc lập đối chiếu"})
+                     "Giá trị gốc": f"{vals} {unit}".strip(), "Đóng góp": g["contribution"].mean()})
 tbl = pd.DataFrame(rows)
 st.dataframe(tbl, hide_index=True, width="stretch", column_config={
     "Điểm (0–100)": st.column_config.ProgressColumn("Điểm (0–100)", min_value=0, max_value=100, format="%.1f"),

@@ -10,7 +10,7 @@ import streamlit as st  # noqa: E402
 
 import utils as U  # noqa: E402
 
-U.hero("Bằng chứng & phân tích độ nhạy", "Tra cứu nguồn, trạng thái kiểm chứng và kiểm tra độ ổn định của thứ hạng")
+U.hero("Bằng chứng & phân tích độ nhạy", "Tra cứu nguồn và kiểm tra độ ổn định của thứ hạng")
 U.banner(U.DISCLAIMER, "warn")
 
 t_ev, t_sens, t_rep = st.tabs(["🔎 Bằng chứng", "📊 Độ nhạy xếp hạng", "📄 Trích đoạn BCTN"])
@@ -18,18 +18,9 @@ t_ev, t_sens, t_rep = st.tabs(["🔎 Bằng chứng", "📊 Độ nhạy xếp h
 # =========================================================================== bằng chứng
 with t_ev:
     ev = U.evidence_table()
-    au = U.audit_df()
-    n_need = int(ev["audit_status"].notna().sum())
-    c1, c2, c3, c4 = st.columns(4)
+    c1 = st.columns(1)[0]
     with c1:
         U.kpi("Quan sát trong dữ liệu", str(len(ev)), f"{int((ev['scored'] == 1).sum())} dùng chấm điểm", "#A98BEA")
-    with c2:
-        U.kpi("Cần thêm nguồn đối chiếu", f"{n_need}", "Theo audit hiện tại", "#F2B66D")
-    with c3:
-        corro = int((au["numeric_corroboration_count"] > 0).sum()) if not au.empty else 0
-        U.kpi("Có BCTN khớp số liệu", str(corro), "Số quan sát được đối chiếu số", "#76CBA8")
-    with c4:
-        U.kpi("Không tính điểm", str(int((ev["scored"] == 0).sum())), "Khác định nghĩa so với kỳ khác", "#EE8FB0")
     st.write("")
 
     f = st.columns(5)
@@ -38,16 +29,12 @@ with t_ev:
     pillars = f[2].multiselect("Trụ cột", U.PILLARS, default=U.PILLARS)
     metrics = f[3].multiselect("Tiêu chí", list(U.METRICS), default=list(U.METRICS), format_func=lambda m: U.METRICS[m][1])
     kinds = f[4].multiselect("Loại", list(U.KIND_LABEL), default=list(U.KIND_LABEL), format_func=lambda k: U.KIND_LABEL[k])
-    g1, g2 = st.columns([1.2, 1])
-    lo, hi = g1.slider("Mức điểm tiêu chí (0–100)", 0, 100, (0, 100))
-    only_flag = g2.checkbox("Chỉ hiện quan sát có cờ cảnh báo (chưa đủ nguồn / không tính điểm)", value=False)
+    lo, hi = st.slider("Mức điểm tiêu chí (0–100)", 0, 100, (0, 100))
 
     d = ev[ev["bank"].isin(banks) & ev["year"].isin(years) & ev["pillar"].isin(pillars) & ev["metric"].isin(metrics) & ev["kind"].isin(kinds)]
     d = d[(d["score"].isna()) | ((d["score"] >= lo) & (d["score"] <= hi))]
-    if only_flag:
-        d = d[d["flag"] != ""]
-    show = d[["bank", "year", "pillar", "metric_label", "value", "unit", "score", "kind_vi", "in_score", "flag", "note", "source_title", "url"]].copy()
-    show.columns = ["Ngân hàng", "Năm", "Trụ cột", "Tiêu chí", "Giá trị", "Đơn vị", "Điểm (0–100)", "Loại", "Tính điểm", "Cờ", "Bằng chứng / ghi chú", "Nguồn", "Liên kết"]
+    show = d[["bank", "year", "pillar", "metric_label", "value", "unit", "score", "kind_vi", "in_score", "note", "source_title", "url"]].copy()
+    show.columns = ["Ngân hàng", "Năm", "Trụ cột", "Tiêu chí", "Giá trị", "Đơn vị", "Điểm (0–100)", "Loại", "Tính điểm", "Bằng chứng / ghi chú", "Nguồn", "Liên kết"]
     st.markdown(f"**{len(show)}** quan sát phù hợp bộ lọc")
     st.dataframe(show, hide_index=True, width="stretch", height=420, column_config={
         "Liên kết": st.column_config.LinkColumn("Liên kết", display_text="Mở nguồn"),
@@ -57,17 +44,6 @@ with t_ev:
         "Bằng chứng / ghi chú": st.column_config.TextColumn(width="large"),
     })
     st.download_button("⬇ Tải bảng đang lọc (CSV)", show.to_csv(index=False).encode("utf-8-sig"), "bang_chung_loc.csv", "text/csv")
-
-    st.markdown("##### Trạng thái kiểm chứng theo tiêu chí")
-    if not au.empty:
-        a = au.copy()
-        a["Tiêu chí"] = a["metric"].map(lambda m: U.METRICS[m][1])
-        sm = a.groupby("Tiêu chí").agg(**{"Số quan sát": ("metric", "size"),
-                                          "Cần thêm nguồn": ("audit_status", lambda s: int(s.notna().sum())),
-                                          "BCTN khớp số": ("numeric_corroboration_count", lambda s: int((s > 0).sum())),
-                                          "BCTN chỉ liên quan chủ đề": ("topic_only_excerpt_count", lambda s: int((s > 0).sum()))}).reset_index()
-        st.dataframe(sm, hide_index=True, width="stretch")
-        st.caption("“BCTN chỉ liên quan chủ đề” là trích đoạn báo cáo thường niên cùng chủ đề nhưng không xác minh được con số/điểm.")
 
     st.markdown("##### Minh chứng chi tiết (nguồn gốc & trích đoạn)")
     sm_df = U.load_csv("evidence_source_matrix.csv")
@@ -80,11 +56,9 @@ with t_ev:
         if sel.empty:
             st.info("Chưa có dữ liệu minh chứng cho tổ hợp này (không có bằng chứng công khai trong bộ dữ liệu).")
         for _, r in sel.sort_values("source_no").iterrows():
-            ok = r["match_status"] == "corroborates_numeric_value"
             page = f" · trang {int(r['page'])}" if pd.notna(r.get("page")) else ""
             with st.expander(f"Nguồn {int(r['source_no'])}: {U.ROLE_LABEL.get(r['source_role'], r['source_role'])}{page}"):
                 st.markdown(f"**{r['source_title']}**")
-                st.markdown(U.badge(U.MATCH_LABEL.get(r["match_status"], r["match_status"]), "#CDEBDD" if ok else "#FFF1C9"), unsafe_allow_html=True)
                 st.markdown(f"> {r['excerpt']}")
                 if isinstance(r["url"], str):
                     st.markdown(f"[Mở nguồn]({r['url']})")

@@ -14,7 +14,6 @@ U.hero("Tổng quan xếp hạng chuyển đổi số ngân hàng",
 U.banner(U.DISCLAIMER, "warn")
 
 rk, yr = U.ranking_df(), U.yearly_df()
-audit = U.audit_df()
 
 mode = st.radio("Cách xếp hạng", ["Điểm trung bình 2023–2025", "Điểm năm 2025"], horizontal=True)
 col, rcol = ("overall", "rank") if mode.startswith("Điểm trung bình") else ("s2025", "rank_2025")
@@ -22,17 +21,13 @@ df = rk.sort_values(rcol).reset_index(drop=True)
 
 # ---- KPI
 leader = df.iloc[0]
-n_total = len(audit)
-n_need = int(audit["audit_status"].notna().sum()) if n_total else 0
-c1, c2, c3, c4 = st.columns(4)
+c1, c2, c3 = st.columns(3)
 with c1:
     U.kpi("Dẫn đầu", U.BANK_FULL[leader["bank"]], f"{leader[col]:.1f} điểm · {U.level_of(leader[col])}", "#6FA8DC")
 with c2:
     U.kpi("Điểm trung bình nhóm", f"{df[col].mean():.1f}", f"Khoảng cách top–cuối: {df[col].max() - df[col].min():.1f} điểm", "#A98BEA")
 with c3:
     U.kpi("Độ phủ dữ liệu TB", f"{rk['coverage'].mean() * 100:.0f}%", "Tỷ trọng chỉ tiêu có dữ liệu (TB các năm)", "#76CBA8")
-with c4:
-    U.kpi("Quan sát cần đối chiếu thêm", f"{n_need}/{n_total}", "Chưa đủ nguồn độc lập (kết quả audit)", "#F2B66D")
 
 st.write("")
 left, right = st.columns([1.15, 1])
